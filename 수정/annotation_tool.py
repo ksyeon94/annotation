@@ -6,7 +6,8 @@ import re
 숫자_dict={}
 단어_file=["무기체계.json", "함급.json", "훈련.json", "조직_직책.json", "위치.json"]
 ###################################################다운받고 이부분 수정###################################################
-용어_dir='/Users/gimseung-yeon/연습/annotation/용어정리/'
+용어_dir='/Users/gimseung-yeon/연습/annotation/용어정리/' #다운받은폴더위치
+텍스트파일='gukbangnews.txt'  #국방기사 파일이름
 ###################################################다운받고 이부분 수정###################################################
 def open_json(file, dict):  #파일을 열어서 읽은뒤 dict에 저장
     with open(file=file, mode='r', encoding='utf-8') as f:
@@ -133,4 +134,4 @@ def auto_annotate(file_name):
                 json.dump(json_dict, d, ensure_ascii=False)
                 d.write('\n')          
 
-auto_annotate('/Users/gimseung-yeon/연습/annotation/gukbangnews.txt')
+auto_annotate(용어_dir+텍스트파일)
